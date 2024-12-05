@@ -1,0 +1,79 @@
+.navbar-freya {
+    background-color: white;
+    margin: 1.25rem auto;
+    color: #161820;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
+    letter-spacing: .01rem;
+    border-radius: 1.375rem;
+}
+
+.title{
+    font-family: "Parkinsans";
+    color: #676767;
+}
+
+.nav-link:hover{
+    color: #FB6376 !important; 
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.btn-auth {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    font-family: "Parkinsans";
+}
+
+.btn-auth:hover {
+    background-color: #f5f5f5;
+}
+
+.btn-login {
+    color: #666;
+    background-color: #ffffff;
+    font-family: "Parkinsans";
+}
+
+.btn-signup {
+    background-color: #FB6376;
+    color: #ffffff;
+}
+
+.btn-signup:hover {
+    background-color: #765D60;
+}
+
+.divider {
+    height: 24px;
+    width: 1px;
+    background-color: #ccc;
+    margin: 0 10px;
+}
+
+.navbar-toggler {
+    padding: 5px 10px;
+    border: none;
+    background-color: transparent;
+}
