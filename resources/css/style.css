@@ -8,11 +8,14 @@
     border-radius: 1.375rem;
 }
 
-.title{
+.title, .logout, .auth-spacing{
     font-family: "Parkinsans";
     color: #676767;
 }
-
+.title{
+    width: 180px;
+    font-size: 25px;
+}
 .nav-link:hover{
     color: #FB6376 !important; 
 }
@@ -24,13 +27,6 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-}
-
-.auth-buttons {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    
 }
 
 .btn-auth {
@@ -76,4 +72,35 @@
     padding: 5px 10px;
     border: none;
     background-color: transparent;
+}
+
+.flags{
+    width: 25px;
+    padding-top: 7px;
+}
+
+.account {
+    font-size: 25px;
+}
+
+.auth-spacing{
+    padding-top: 100px;
+}
+
+.footer-links{
+    color: #676767;
+    text-decoration: none;
+}
+
+.title-footer{
+    color: #666;
+    font-family: "Parkinsans";
+}
+
+.footer-social{
+    color: #a8a9a5;
+}
+
+.footer-links:hover, .footer-social:hover{
+    color: #FB6376;
 }
