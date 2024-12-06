@@ -8,7 +8,6 @@
         @empty
             <div class="col-12">
                 <h3 class="text-center">No articles have been added yet</h3>
-                <i class="bi bi-emoji-frown"></i>
             </div>
         @endforelse
     </div>

@@ -64,7 +64,7 @@
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class="footer-menu footer-menu-004 border-animation-left">
+                <div class= "border-animation-left">
                     <h5 class="widget-title text-uppercase mb-4 title-footer">Contact Us</h5>
                     <p>
                         Do you have any questions or suggestions? 
