@@ -10,14 +10,14 @@
 
 .title, .logout, .auth-spacing{
     font-family: "Parkinsans";
-    color: #676767;
+    color: #7F5539;
 }
 .title{
     width: 180px;
     font-size: 25px;
 }
 .nav-link:hover{
-    color: #FB6376 !important; 
+    color: #7F5539 !important; 
 }
 
 .navbar-container {
@@ -53,12 +53,12 @@
 }
 
 .btn-signup {
-    background-color: #FB6376;
+    background-color: #7F5539;
     color: #ffffff;
 }
 
 .btn-signup:hover {
-    background-color: #765D60;
+    background-color: #412a1c;
 }
 
 .divider {
@@ -102,5 +102,152 @@
 }
 
 .footer-links:hover, .footer-social:hover{
-    color: #FB6376;
+    color: #7F5539;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: calc(4rem - 30px) 0 4rem 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero {
+        padding: calc(8rem - 30px) 0 8rem 0;
+    }
+}
+
+.hero .intro-excerpt {
+    position: relative;
+    z-index: 4;
+}
+
+@media (min-width: 992px) {
+    .hero .intro-excerpt {
+        max-width: 450px;
+    }
+}
+
+.hero h1 {
+    font-weight: 700;
+    color: #7F5539;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 1400px) {
+    .hero h1 {
+        font-size: 54px;
+    }
+}
+
+.hero p {
+    color: #676767;
+    margin-bottom: 30px;
+}
+
+.hero .hero-img-wrap {
+    position: relative;
+}
+
+.hero .hero-img-wrap img {
+    position: relative;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    max-width: 780px;
+    left: -20px;
+}
+
+@media (min-width: 768px) {
+    .hero .hero-img-wrap img {
+        right: 0px;
+        left: -100px;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero .hero-img-wrap img {
+        left: 0px;
+        top: -80px;
+        position: absolute;
+        right: -50px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero .hero-img-wrap img {
+        left: 0px;
+        top: -80px;
+        right: -100px;
+    }
+}
+
+.hero .hero-img-wrap:after {
+    content: "";
+    position: absolute;
+    width: 255px;
+    height: 217px;
+    background-image: url("");
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -100px;
+    top: -0px;
+}
+
+@media (min-width: 1200px) {
+    .hero .hero-img-wrap:after {
+        top: -40px;
+    }
+}
+
+.btn {
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #ffffff;
+    background: #2f2f2f;
+    border-color: #2f2f2f;
+}
+
+.btn:hover {
+    color: #ffffff;
+    background: #222222;
+    border-color: #222222;
+}
+
+.btn:active, .btn:focus {
+    outline: none !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+.btn.btn-secondary {
+    color: #2f2f2f;
+    background: #DDB892;
+    border-color: #c49b72;
+}
+
+.btn.btn-secondary:hover {
+    color: #ffffff;
+    background: #7F5539;
+    border-color: #DDB892;
+}
+
+.btn.btn-white-outline {
+    background: transparent;
+    border-width: 2px;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.btn.btn-white-outline:hover {
+    border-color: #c49b72;
+    color: #412a1c;
 }

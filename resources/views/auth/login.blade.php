@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Accedi</h1>
+                <h1 class="my-5 text-center auth-spacing">Login</h1>
             </div>
         </div>
     </div>
@@ -33,7 +33,7 @@
                             </div>
                             <button class="button-submit" type="submit">Sign In</button>
                             <p class="p">Don't have an account? <span class="span">
-                                <a href="{{route('register')}}">Sign Up</a></span>
+                                <a href="{{route('register')}}">Login</a></span>
                             </p>
                             <p class="p line">Or With</p>
                             <div class="flex-row">

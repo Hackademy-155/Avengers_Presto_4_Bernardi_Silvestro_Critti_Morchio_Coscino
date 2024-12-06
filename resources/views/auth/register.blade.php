@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Registrati</h1>
+                <h1 class="my-5 text-center auth-spacing">Sign Up</h1>
             </div>
         </div>
     </div>

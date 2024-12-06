@@ -78,13 +78,13 @@
                     <div class="col-md-6 d-flex flex-wrap">
                         <div class="shipping">
                             <span class="title-footer">We ship with:</span>
-                            <img src="media/dhl-logo.png" alt="icon">
+                            <img src="/media/dhl-logo.png" alt="icon">
                         </div>
                         <div class="payment-option">
                             <span class="title-footer">Payment Option:</span>
-                            <img src="media/visa-card.png" alt="card">
-                            <img src="media/paypal-card.png" alt="card">
-                            <img src="media/master-card.png" alt="card">
+                            <img src="/media/visa-card.png" alt="card">
+                            <img src="/media/paypal-card.png" alt="card">
+                            <img src="/media/master-card.png" alt="card">
                         </div>
                     </div>
                     <div class="col-md-6 text-end">
