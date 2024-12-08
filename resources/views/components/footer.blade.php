@@ -10,35 +10,29 @@
                         Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus
                         vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
                     </p>
-                    <div class="social-links">
-                        <ul class="list-unstyled d-flex flex-wrap gap-3">
-                            <li>
-                                <a href="#" class="text-secondary">
-                                    <i class="bi bi-facebook fs-4 footer-social"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-secondary">
-                                    <i class="bi bi-twitter fs-4 footer-social"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-secondary">
-                                    <i class="bi bi-instagram fs-4 footer-social"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-secondary">
-                                    <i class="bi bi-pinterest fs-4 footer-social"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="text-secondary">
-                                    <i class="bi bi-linkedin fs-4 footer-social"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <h5 class="widget-title text-uppercase mb-4 title-footer">Follow Us</h5>
+                    <ul class="wrapper social-icons">
+                        <li class="icon facebook">
+                            <span class="tooltip">Facebook</span>
+                            <i class="bi bi-facebook"></i>
+                        </li>
+                        <li class="icon twitter">
+                            <span class="tooltip">Twitter</span>
+                            <i class="bi bi-twitter"></i>
+                        </li>
+                        <li class="icon instagram">
+                            <span class="tooltip">Instagram</span>
+                            <i class="bi bi-instagram"></i>
+                        </li>
+                        <li class="icon linkedin">
+                            <span class="tooltip">linkedin</span>
+                            <i class="bi bi-linkedin"></i>
+                        </li>
+                        <li class="icon pinterest">
+                            <span class="tooltip">Pinterest</span>
+                            <i class="bi bi-pinterest"></i>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
