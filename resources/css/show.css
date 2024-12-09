@@ -1,0 +1,85 @@
+.article-container {
+    font-family: "Parkinsans";
+    color: #7F5539;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Sezione Articolo */
+.article-section {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-template-areas: 
+        "image content";
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Stile Immagine */
+.article-image {
+    grid-area: image;
+    position: relative;
+    overflow: hidden;
+}
+
+.image-rounded {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.overlay-title {
+    font-size: 1rem;
+}
+
+.article-content {
+    grid-area: content;
+    background: #d2bca771;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.article-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.article-title::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #666;
+    margin-top: 0.5rem;
+}
+
+.article-description {
+    margin-bottom: 1.5rem;
+    color: #555555;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .article-section {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .article-content {
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .article-title {
+        font-size: 2rem;
+    }
+}

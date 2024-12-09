@@ -2,12 +2,11 @@
     <div class="card">
         <div 
             class="card-img" 
-            style="background-color: #B08968; background-image: url('{{$article->image}}'); background-size: cover; background-position: center;">
+            style="height: 200px; background-image: url('/media/default/default.jpg'); background-size: cover; background-position: center;">
         </div>
         <div class="card-info">
             <h3 class="text-title">{{$article->title}}</h3>
-            <p class="text-body">{{$article->description}}</p>
-            <h4 class="text-body"><a href="{{ route('byCategory', ['category' => $article->category]) }}">{{$article->category->name}}</a></h4>
+            <h4 class="text-body pt-3"><a href="{{ route('byCategory', ['category' => $article->category]) }}">{{$article->category->name}}</a></h4>
         </div>
         <div class="card-footer">
             <span class="text-title">${{$article->price}}</span>

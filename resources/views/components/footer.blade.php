@@ -10,8 +10,8 @@
                         Gravida massa volutpat aenean odio. Amet, turpis erat nullam fringilla elementum diam in. Nisi, purus
                         vitae, ultrices nunc. Sit ac sit suscipit hendrerit.
                     </p>
-                    <h5 class="widget-title text-uppercase mb-4 title-footer">Follow Us</h5>
-                    <ul class="wrapper social-icons">
+                    <h5 class="widget-title text-uppercase title-footer">Follow Us</h5>
+                    <ul class="wrapper social-icons my-3">
                         <li class="icon facebook">
                             <span class="tooltip">Facebook</span>
                             <i class="bi bi-facebook"></i>
@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div class="col-md-3 col-sm-6">
-                <div class= "border-animation-left">
+                <div class="border-animation-left">
                     <h5 class="widget-title text-uppercase mb-4 title-footer">Contact Us</h5>
                     <p>
                         Do you have any questions or suggestions? 
@@ -74,8 +74,8 @@
     </div>
     <div class="border-top py-4">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6 d-flex flex-wrap">
+            <div class="row text-center text-md-start">
+                <div class="col-12 col-md-6 d-flex align-items-center justify-content-around mb-3 mb-0 ">
                     <div class="shipping">
                         <span class="title-footer">We ship with:</span>
                         <img src="/media/dhl-logo.png" alt="icon">
@@ -87,7 +87,7 @@
                         <img src="/media/master-card.png" alt="card">
                     </div>
                 </div>
-                <div class="col-md-6 text-end">
+                <div class="col-12 col-md-6 text-center title-footer">
                     <p>© Copyright 2024 Presto. All rights reserved.</p>
                 </div>
             </div>
