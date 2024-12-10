@@ -12,7 +12,7 @@
             </div>
         @endif
         @if (session()->has('message'))
-            <div class="col-5 alert alert-danger text-center shadow rounded w-50">
+            <div class="col-5 alert alert-success d-flex  text-center shadow rounded w-50">
                 {{ session('message') }}
             </div>
         @endif

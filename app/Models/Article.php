@@ -37,7 +37,7 @@ class Article extends Model
         return [
             'id' =>$this->id,
             'title' =>$this->title,
-            'description' =>$this->descrption,
+            'description' =>$this->description,
             'category' =>$this->category
         ];
     }

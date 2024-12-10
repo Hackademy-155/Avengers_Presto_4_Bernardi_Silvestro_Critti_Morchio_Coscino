@@ -1,20 +1,56 @@
 .navbar-freya {
     background-color: white;
-    margin: 1.25rem auto;
+    margin: 0 auto;
     color: #161820;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .15);
-    letter-spacing: .01rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.01rem;
     border-radius: 1.375rem;
+    max-width: 1200px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.title, .logout, .auth-spacing{
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.nav-link {
+    color: #161820;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.logout {
+    margin-right: 0.01rem; 
+}
+
+.logout .nav-item {
+    display: flex;
+    align-items: center;
+}
+
+.logout .nav-link {
+    padding: 0;
+}
+
+.title {
     font-family: "Parkinsans";
     color: #7F5539;
 }
-.title{
-    width: 180px;
-    font-size: 25px;
+
+.logout, .auth-spacing{
+    font-family: "Parkinsans";
 }
+
 .nav-link:hover{
     color: #7F5539 !important; 
 }
@@ -22,10 +58,10 @@
 .navbar-container {
     display: flex;
     align-items: center;
-    flex-direction: row;
-    position: relative;
-    max-width: 1200px;
+    justify-content: space-between;
+    max-width: 100%;
     margin: 0 auto;
+    padding: 0 1.5rem; 
 }
 
 .btn-auth {
@@ -75,13 +111,21 @@
     background-color: transparent;
 }
 
-.flags{
-    width: 25px;
-    padding-top: 7px;
+.flags {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 10px;
 }
 
 .account {
-    font-size: 25px;
+    font-size: 22px;
+    color: #7F5539;
+}
+
+.account:hover{
+    color: #412a1c;
 }
 
 .auth-spacing{
@@ -320,7 +364,7 @@
 }
 
 .dropdown-menu {
-    background-color: #EDE0D4; 
+    background-color: #e3c6ab; 
     border-radius: 30px; 
     padding: 10px; 
 }
@@ -391,7 +435,6 @@
     box-shadow: 2px 2px 0px #412a1c;
 }
 
-
 .btn-primary {
     position: relative;
     display: flex;
@@ -461,115 +504,15 @@
     box-shadow: 2px 2px 0px #412a1c;
 }
 
-
-
-
-
-/* From Uiverse.io by andrew-demchenk0 */ 
-.switch {
-    font-size: 13px;
-    position: relative;
-    display: inline-block;
-    width: 64px;
-    height: 34px;
+.notifica {
+    left: calc(100% - 20px);
+    transform: translateX(-50%);
 }
 
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #73C0FC;
-    transition: .4s;
-    border-radius: 50px;
-}
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 29px;
-    width: 29px;
-    border-radius: 20px;
-    left: 3px;
-    bottom:  0.156269rem;
-    z-index: 2;
-    background-color: #e8e8e8;
-    transition: .4s;
-}
 
-.sun svg {
-    position: absolute;
-    top: 6px;
-    left: 36px;
-    z-index: 1;
-    width: 24px;
-    height: 24px;
-}
 
-.moon svg {
-    fill: #73C0FC;
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    z-index: 1;
-    width: 24px;
-    height: 24px;
-}
 
-.sun svg {
-    animation: rotate 15s linear infinite;
-}
 
-@keyframes rotate {
-    
-    0% {
-        transform: rotate(0);
-    }
-    
-    100% {
-        transform: rotate(360deg);
-    }
-}
 
-/* .switch:hover */.moon svg {
-    animation: tilt 5s linear infinite;
-}
-
-@keyframes tilt {
-    
-    0% {
-        transform: rotate(0deg);
-    }
-    
-    25% {
-        transform: rotate(-10deg);
-    }
-    
-    75% {
-        transform: rotate(10deg);
-    }
-    
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.input:checked + .slider {
-    background-color: #183153;
-}
-
-.input:focus + .slider {
-    box-shadow: 0 0 1px #183153;
-}
-
-.input:checked + .slider:before {
-    transform: translateX(30px);
-}
