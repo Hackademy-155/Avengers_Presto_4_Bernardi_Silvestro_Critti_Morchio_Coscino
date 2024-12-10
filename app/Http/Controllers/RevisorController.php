@@ -35,6 +35,14 @@ class RevisorController extends Controller
         ->with('message', "you rejected the item $article->title");
     }
 
+    public function annulla (Article $article)
+    {
+        $article->setAccepted(null);
+        return redirect()
+        ->back()
+        ->with('message', "you rejected the item $article->title");
+    }
+
     public function becomeRevisor(){
         Mail::to('admin@presto.it')->send(new BecomeRevisor(Auth::user()));
         return redirect()->route('homepage')->with('message','Thank You, you have requested to become an auditor');
