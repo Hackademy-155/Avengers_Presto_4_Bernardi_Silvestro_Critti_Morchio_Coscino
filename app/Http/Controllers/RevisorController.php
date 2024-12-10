@@ -19,7 +19,8 @@ class RevisorController extends Controller
     return view('revisor.index', compact('article_to_check'));
     }
 
-    public function accept(Article $article){
+    public function accept(Article $article)
+    {
         $article->setAccepted(true);
         return redirect()
         ->back()

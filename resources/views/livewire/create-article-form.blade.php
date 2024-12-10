@@ -6,7 +6,7 @@
 <div class="container my-5">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 justify-content-center">
-            <form class="form" wire:submit.prevent="store">
+            <form class="form" wire:submit='store'>
                 <div class="flex-column">
                     <label for="title">Title:</label>
                 </div>

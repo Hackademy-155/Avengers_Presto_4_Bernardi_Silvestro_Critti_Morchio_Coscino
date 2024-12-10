@@ -20,18 +20,7 @@ class CreateArticleForm extends Component
     public $category;
     public $article;
 
-    public function save()
-    {
-        $this->validate();
-        $this->article = Article::create([
-            'title' => $this->title,
-            'description' => $this->description,
-            'price' => $this->price,
-            'category_id' => $this->category,
-            'user_id' => Auth::id()
-        ]);
-    }
-
+    
     public function store(){
         $this->validate();
 
@@ -40,7 +29,7 @@ class CreateArticleForm extends Component
             'description'=>$this->description,
             'price'=>$this->price,
             'category_id'=>$this->category,
-            'user_'=>Auth::user()->id,
+            'user_id'=>Auth::user()->id,
         ]);
         session()->flash('success', 'Article inserted correctly');
         $this->reset();

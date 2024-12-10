@@ -36,6 +36,15 @@
                         <a class="nav-link" href="{{ route('create.article') }}">Insert Article</a>
                     </li>
                 @endauth
+                {{-- <form class="d-flex ms-auto" role="search" action="{{ route('article.search') }}" method="GET">
+                    <div class="input-group">
+                        <input type="search" name="query" class="form-control" placeholder="Search"
+                            aria-label="search">
+                        <button type="submit" class="input-group-text btn btn-outline-success"
+                            id="basic-addon2">Search</button>
+                    </div>
+                </form> --}}
+                <a href="{{route('article.search')}}"><i class="bi bi-search"></i></a>
                 <div class="d-flex">
                     <li>
                         <a href="#"><img class="flags ms-3" src="/media/italy.png" alt="Italy"></a>
@@ -44,7 +53,7 @@
                         <a href="#"><img class="flags ms-3 me-3" src="/media/united-kingdom.png"
                                 alt="United Kingdom"></a>
                     </li>
-                    <li class="">
+                    <li id="buttonDark">
                         <label class="switch mb-0">
                             <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <g fill="#ffd43b">
@@ -66,36 +75,36 @@
                 </div>
             </ul>
             @auth
-                    @if (Auth::user()->is_revisor)
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
-                                href="{{ route('revisor.index') }}">Revision Area
-                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                                    {{\App\Models\Article::toBeRevisedCount()}}
-                                </span>
-                            </a>
-                        </li>
-                    @endif
-                    <ul class="navbar-nav justify-content-end px-2 d-flex align-items-center logout">
-                        <li class="nav-item d-flex align-items-center">
-                            <p class="mb-0 fs-5">Ciao {{ Auth::user()->name }}</p>
-                            <a class="nav-link" href="#"
-                                onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
-                                <i class="bi bi-box-arrow-right account"></i>
-                            </a>
-                        </li>
-                        <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
-                            @csrf
-                        </form>
-                    </ul>
-                @endauth
-                @guest
-                    <div class="auth-buttons d-flex align-items-center justify-content-end title">
-                        <a href="{{ Route('login') }}" class="btn-auth btn-login">Login</a>
-                        <span class="divider"></span>
-                        <a href="{{ Route('register') }}" class="btn-auth btn-signup">Sign Up</a>
-                    </div>
-                @endguest
-            </div>
+                @if (Auth::user()->is_revisor)
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
+                            href="{{ route('revisor.index') }}">Revision Area
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                {{ \App\Models\Article::toBeRevisedCount() }}
+                            </span>
+                        </a>
+                    </li>
+                @endif
+                <ul class="navbar-nav justify-content-end px-2 d-flex align-items-center logout">
+                    <li class="nav-item d-flex align-items-center">
+                        <p class="mb-0 fs-5">Ciao {{ Auth::user()->name }}</p>
+                        <a class="nav-link" href="#"
+                            onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
+                            <i class="bi bi-box-arrow-right account"></i>
+                        </a>
+                    </li>
+                    <form action="{{ route('logout') }}" method="POST" id="form-logout" class="d-none">
+                        @csrf
+                    </form>
+                </ul>
+            @endauth
+            @guest
+                <div class="auth-buttons d-flex align-items-center justify-content-end title">
+                    <a href="{{ Route('login') }}" class="btn-auth btn-login">Login</a>
+                    <span class="divider"></span>
+                    <a href="{{ Route('register') }}" class="btn-auth btn-signup">Sign Up</a>
+                </div>
+            @endguest
         </div>
-    </nav>
+    </div>
+</nav>

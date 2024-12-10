@@ -72,7 +72,7 @@
                         <p>By clicking the button below you will make a request to our admin.</p>
                         <a href="{{route('become.revisor')}}" class="btn btn-succes">Become reviewer</a>
                     </div>
-                </div>
+                </div> 
             </div>
         </div>
     </div>
