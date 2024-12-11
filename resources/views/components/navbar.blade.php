@@ -48,8 +48,8 @@
                         </a>
                     </li>
                 @endauth
-                <a href="{{ route('article.search') }}" class="d-flex align-items-center me-2">
-                    <i class="bi bi-search fs-6 pb-0"></i>
+                <a href="#" class="d-flex align-items-center nav-link">
+                    <i id="searchIcon" class="bi bi-search fs-6"></i>
                 </a>
                 <div class="d-flex align-items-center">
                     <!--
@@ -64,10 +64,8 @@
                         </a>
                     </li>
                     -->
-                    <li id="buttonDark">
+                    <li id="buttonDark" class="nav-link">
                         <label class="switch mb-0">
-                            <span class="sun"><i class="bi bi-sun fs-4 text-warning"></i></span>
-                            <span class="moon"><i class="bi bi-moon fs-4 text-muted"></i></span>
                             <input type="checkbox" class="input">
                             <span class="slider"></span>
                         </label>
@@ -75,21 +73,26 @@
                 </div>
             </ul>
             @auth
-                <ul class="navbar-nav d-flex logout">
+                <ul class="navbar-nav d-flex logout media-collapse">
                     <li class="nav-item d-flex align-items-center">
-                        <p class="mb-0 fs-5 me-3">Ciao {{ Auth::user()->name }}</p>
+                        <p class="mb-0 fs-5 me-3">Hello {{ Auth::user()->name }} !</p>
                         @if (Auth::user()->is_revisor)
-                        <a class="nav-link btn btn-auth position-relative w-auto rounded-pill px-3 mt-0" href="{{ route('revisor.index') }}">
-                            <i class="bi bi-pen-fill me-2"></i>Revision Area
-                            <span class="position-absolute top-0 translate-middle badge rounded-pill bg-danger notifica">
-                                {{ \App\Models\Article::toBeRevisedCount() }}
-                            </span>
-                        </a>  
+                            <a class="nav-link btn btn-auth position-relative w-auto rounded-pill px-3 mt-0 me-2 revision-btn"
+                                href="{{ route('revisor.index') }}">
+                                <i class="bi bi-pen-fill me-2"></i>Revision Area
+                                <span
+                                    class="position-absolute top-0 translate-middle badge rounded-pill bg-danger notifica mt-2 ms-3">
+                                    {{ \App\Models\Article::toBeRevisedCount() }}
+                                </span>
+                            </a>
                         @endif
                         <a class="nav-link" href="#"
                             onclick="event.preventDefault(); document.querySelector('#form-logout').submit();">
                             <i class="bi bi-box-arrow-right account"></i>
                         </a>
+                        <form id="form-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     </li>
                 </ul>
             @endauth
@@ -106,3 +109,16 @@
         </div>
     </div>
 </nav>
+<div class="container-fluid mt-4">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-5 search-top">
+            <form id="searchForm" class="d-flex d-none" role="search" action="{{ route('article.search') }}"
+                method="GET">
+                <input class="form-control me-2 searching rounded-pill" type="search" name="query" placeholder="Type something..."
+                    aria-label="Search">
+                <button class="btn btn-outline-primary reviewer-btn mt-0 rounded-pill" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+

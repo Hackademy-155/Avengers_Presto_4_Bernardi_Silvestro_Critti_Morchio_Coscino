@@ -1,7 +1,6 @@
 <footer class="mt-5">
     <div class="container">
         <div class="row d-flex flex-wrap justify-content-between py-5">
-            <!-- Presto.it Section -->
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="footer-menu">
                     <div class="footer-intro mb-4">
@@ -30,8 +29,6 @@
                     </ul>
                 </div>
             </div>
-            
-            <!-- Quick Links Section -->
             <div class="col-md-3 col-sm-6 mb-4">
                 <div>
                     <h5 class="text-uppercase mb-4 title-footer">Quick Links</h5>
@@ -44,8 +41,6 @@
                     </ul>
                 </div>
             </div>
-
-            <!-- Contact Us and Work Section side by side -->
             <div class="col-md-3 col-sm-6 mb-4">
                 <div class="border-animation-left">
                     <h5 class="widget-title text-uppercase mb-4 title-footer">Contact Us</h5>
@@ -59,13 +54,11 @@
                     </p>
                 </div> 
             </div>
-
-            <!-- Work Section next to Contact Us -->
             <div class="col-md-3 col-sm-6 mb-4">
-                <h5 class="widget-title text-uppercase mb-4 title-footer">Work</h5>
+                <h5 class="widget-title text-uppercase mb-4 title-footer">Work with us</h5>
                 <p>Do you want to become a reviewer?</p>
                 <p>By clicking the button below, you can request to join as a reviewer.</p>
-                <a href="{{ route('become.revisor') }}" class="btn btn-success">Become Reviewer</a>
+                <a href="{{ route('become.revisor') }}" class="btn rounded-pill reviewer-btn">Become Reviewer <i class="bi bi-envelope-paper-fill"></i></a>
             </div>
         </div>
     </div>
@@ -83,7 +76,6 @@
         </div>
     </div>
     -->
-    <!-- Footer Bottom Section: Centered Copyright -->
     <div class="border-top py-4">
         <div class="container">
             <div class="row justify-content-center">

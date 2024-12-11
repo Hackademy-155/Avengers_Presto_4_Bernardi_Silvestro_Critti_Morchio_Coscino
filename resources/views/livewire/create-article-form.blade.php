@@ -74,7 +74,7 @@
                     @enderror
                 </div>
 
-                <button type="submit" class="button-submit">Pusblish</button>
+                <button type="submit" class="button-submit rounded-pill reviewer-btn">Pusblish</button>
             </form>
         </div>
     </div>

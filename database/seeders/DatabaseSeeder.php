@@ -10,16 +10,16 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     public $categories = [
-        'elettronica',
-        'abbigliamento',
-        'salute e bellezza',
-        'casa e giardinaggio',
-        'giocattoli',
-        'sport',
-        'animali domestici',
-        'libri e riviste',
-        'accessori',
-        'motori',
+        'Electronics',
+        'Clothes',
+        'Beauty and Health',
+        'Home and Gardening',
+        'Games',
+        'Sport',
+        'Animals',
+        'Books and Magazines',
+        'Accessories',
+        'Engines',
     ];
     /**
      * Seed the application's database.
