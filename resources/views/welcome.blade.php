@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Recent articles</h1>
+            <h1 class="my-5 text-center auth-spacing">{{ __('ui.hello') }}</h1>
             </div>
         </div>
         
@@ -25,7 +25,7 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3 class="emoji-color">No articles have been added yet</h3>
+                    <h3 class="emoji-color">{{ __('ui.Noarticleshavebeenaddedyet') }}</h3>
                     <i class="bi bi-emoji-frown emoji-color fs-1"></i>
                 </div>
             @endforelse

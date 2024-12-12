@@ -9,7 +9,7 @@
             <ul class="navbar-nav py-5 py-lg-0 mt-1 mb-2 my-lg-0 p-5 mx-auto navbar-freya">
                 <li class="nav-item adjust-navbar">
                     <a class="nav-link" href="/">
-                        <i class="bi bi-house-door-fill me-2"></i>Home
+                        <i class="bi bi-house-door-fill me-2"></i>{{ __('ui.Home') }}
                     </a>
                 </li>
                 {{-- <li class="nav-item">
@@ -19,20 +19,21 @@
                 </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">
-                        <i class="bi bi-boxes me-2"></i>Products
+                        <i class="bi bi-boxes me-2"></i>{{ __('ui.Products') }}
                     </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
-                        <i class="bi bi-tags-fill me-2"></i>Categories
+                        <i class="bi bi-tags-fill me-2"></i>{{ __('ui.Categories') }}
                     </a>
                     <ul class="dropdown-menu">
                         @foreach ($categories as $category)
                             <li class="categories-drop">
                                 <a class="dropdown-item text-capitalize color-categories"
                                     href="{{ route('byCategory', ['category' => $category]) }}">
-                                    <i class="bi bi-tag me-2"></i>{{ $category->name }}
+                                    <i class="bi bi-tag me-2"></i>
+                                    {{__('ui.' . $category->name)}}
                                 </a>
                             </li>
                             @if (!$loop->last)
@@ -44,7 +45,7 @@
                 @auth
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('create.article') }}">
-                            <i class="bi bi-file-earmark-plus me-2"></i>Insert Article
+                            <i class="bi bi-file-earmark-plus me-2"></i>{{ __('ui.InsertArticle') }}
                         </a>
                     </li>
                 @endauth
@@ -52,18 +53,17 @@
                     <i id="searchIcon" class="bi bi-search fs-6"></i>
                 </a>
                 <div class="d-flex align-items-center">
-                    <!--
+
                     <li>
-                        <a href="#" class="me-2">
-                            <img class="flags" src="/media/italy.png" alt="Italy">
-                        </a>
+                       <x-_locale lang="it" />
                     </li>
                     <li>
-                        <a href="#" class="me-3">
-                            <img class="flags" src="/media/united-kingdom.png" alt="United Kingdom">
-                        </a>
+                        <x-_locale lang="en" />
                     </li>
-                    -->
+                    <li>
+                        <x-_locale lang="es" />
+                    </li>
+
                     <li id="buttonDark" class="nav-link">
                         <label class="switch mb-0">
                             <input type="checkbox" class="input">
@@ -75,11 +75,11 @@
             @auth
                 <ul class="navbar-nav d-flex logout media-collapse">
                     <li class="nav-item d-flex align-items-center">
-                        <p class="mb-0 fs-5 me-3">Hello {{ Auth::user()->name }} !</p>
+                        <p class="mb-0 fs-5 me-3">{{ __('ui.hello') }} {{ Auth::user()->name }} !</p>
                         @if (Auth::user()->is_revisor)
                             <a class="nav-link btn btn-auth position-relative w-auto rounded-pill px-3 mt-0 me-2 revision-btn"
                                 href="{{ route('revisor.index') }}">
-                                <i class="bi bi-pen-fill me-2"></i>Revision Area
+                                <i class="bi bi-pen-fill me-2"></i>{{ __('ui.revisionArea') }}
                                 <span
                                     class="position-absolute top-0 translate-middle badge rounded-pill bg-danger notifica mt-2 ms-3">
                                     {{ \App\Models\Article::toBeRevisedCount() }}
@@ -99,10 +99,10 @@
             @guest
                 <div class="auth-buttons d-flex align-items-center justify-content-end ms-auto">
                     <a href="{{ Route('login') }}" class="btn-auth btn-login d-flex align-items-center me-2">
-                        <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                        <i class="bi bi-box-arrow-in-right me-2"></i>{{ __('ui.Login') }}
                     </a>
                     <a href="{{ Route('register') }}" class="btn-auth btn-signup d-flex align-items-center">
-                        <i class="bi bi-person-add me-2"></i>Sign Up
+                        <i class="bi bi-person-add me-2"></i>{{ __('ui.signUp') }}
                     </a>
                 </div>
             @endguest
@@ -114,11 +114,10 @@
         <div class="col-12 col-md-5 search-top">
             <form id="searchForm" class="d-flex d-none" role="search" action="{{ route('article.search') }}"
                 method="GET">
-                <input class="form-control me-2 searching rounded-pill" type="search" name="query" placeholder="Type something..."
-                    aria-label="Search">
-                <button class="btn btn-outline-primary reviewer-btn mt-0 rounded-pill" type="submit">Search</button>
+                <input class="form-control me-2 searching rounded-pill" type="search" name="query"
+                    placeholder="Type something..." aria-label="Search">
+                <button class="btn btn-outline-primary reviewer-btn mt-0 rounded-pill" type="submit">{{ __('ui.Search') }}</button>
             </form>
         </div>
     </div>
 </div>
-
