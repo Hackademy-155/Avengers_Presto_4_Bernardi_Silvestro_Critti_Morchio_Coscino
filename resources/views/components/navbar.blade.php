@@ -12,11 +12,11 @@
                         <i class="bi bi-house-door-fill me-2"></i>Home
                     </a>
                 </li>
-                <li class="nav-item">
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#">
                         <i class="bi bi-info-circle me-2"></i>About
                     </a>
-                </li>
+                </li> --}}
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('article.index') }}">
                         <i class="bi bi-boxes me-2"></i>Products

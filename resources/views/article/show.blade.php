@@ -30,16 +30,21 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
                 <div class="article-content">
                     <h2 class="article-price mb-4">Product Details</h2>
                     <p class="article-description">{{ $article->description }}</p>
                     <h4 class="article-price">${{ $article->price }}</h4>
-                    <form method="POST" action="{{ route('article.cancel', $article) }}">
-                        @csrf
-                        @method('PATCH')
-                        <button type="submit" class="delete-btn mt-4">Undo last operation</button>
-                    </form>
+                    @auth
+                        @if (Auth::user()->is_revisor)
+                            <form method="POST" action="{{ route('article.cancel', $article) }}">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="delete-btn mt-4">Undo last operation</button>
+                            </form>
+                        @endif
+                    @endauth
                 </div>
             </div>
         </div>

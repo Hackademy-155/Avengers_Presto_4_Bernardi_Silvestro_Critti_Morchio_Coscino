@@ -38,8 +38,7 @@ class RevisorController extends Controller
     public function annulla (Article $article)
     {
         $article->setAccepted(null);
-        return redirect()
-        ->back()
+        return redirect()->route('homepage')->with('message','Your operation has been undone successfully')
         ->with('message', "you rejected the item $article->title");
     }
 
