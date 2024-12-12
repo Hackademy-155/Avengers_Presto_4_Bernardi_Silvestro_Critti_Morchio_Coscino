@@ -30,7 +30,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
                 <div class="article-content">
                     <h2 class="article-price mb-4">Product Details</h2>
@@ -49,4 +48,33 @@
             </div>
         </div>
     </section>
+    {{-- da adattare qui --}}
+    <div class="col-12 col-md-6 mb-3 ">
+        @if ($article->images->count() > 0)
+            <div id="carouselExample" class="carousel slide ">
+                <div class="carousel-inner">
+                    @foreach ($article->images as $key => $image)
+                        <div class="carousel-item @if ($loop->first) active @endif">
+                            <img src="{{ Storage::url($image->path) }}" class="d-block w-100 rounded shadow"
+                                alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
+                        </div>
+                    @endforeach
+                </div>
+                @if ($article->images->count() > 1)
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                @endif
+            </div>
+        @else
+            <img src="https://picsum.photos/300" alt="Nessuna foto inserita dall'utente">
+        @endif
+    </div>
 </x-layout>

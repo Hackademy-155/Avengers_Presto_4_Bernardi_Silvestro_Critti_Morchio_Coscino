@@ -4,7 +4,7 @@
             <div class="col-lg-5">
                 <div class="intro-excerpt">
                     <h1 style="font-family: 'Parkinsans'">{{ __('ui.theplacewhereyoucanbuy') }} <span class="text-decoration-underline">{{ __('ui.everything') }} </span></h1>
-                    <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
+                    <p class="mb-4 fs-5">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
                     <a href="{{route('create.article')}}" class="text-decoration-none media-btn">
                         <button class="btn-primary rounded-pill">{{ __('ui.InsertArticle') }}
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-file-earmark-plus btn-icon" viewBox="2 -1 12 20">

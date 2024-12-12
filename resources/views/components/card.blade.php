@@ -1,8 +1,9 @@
 <div class="col-8 col-sm-6 col-md-10 col-lg-10 my-5 d-flex justify-content-center card-w mx-auto">
     <div class="card">
         <span class="premium-label"></span>
-        <div class="card-img"
-            style="height: 200px; background-image: url('/media/default/default.jpg'); background-size: cover; background-position: center;">
+        <div class="card-img">
+            {{-- style="height: 200px; background-image: url('/media/default/default.jpg'); background-size: cover; background-position: center;"> --}}
+            <img src="{{$article->images->isNotEmpty() ? Storage::url($article->images->first()->path) : 'https://picsum.photos/200'}}" alt="Immagine dell'articolo {{$article->title}}" class="card-img-top">
         </div>
         <div class="card-info">
             <h3 class="text-title">{{ $article->title }}</h3>

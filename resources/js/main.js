@@ -46,6 +46,8 @@ if (mode === 'dark') {
     button.classList.remove('btn-outline-light');
 };
 
+
+
 // document.querySelectorAll('.toggle-password').forEach(button => {
 //     button.addEventListener('click', function () {
 //         const targetId = this.getAttribute('data-target');
