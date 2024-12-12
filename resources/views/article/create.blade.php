@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Publish an article!</h1>
+                <h1 class="my-5 text-center auth-spacing">{{ __('ui.PublicAnArticle') }}</h1>
             </div>
         </div>
     </div>
