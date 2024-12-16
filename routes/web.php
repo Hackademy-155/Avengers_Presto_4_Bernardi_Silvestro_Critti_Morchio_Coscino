@@ -8,6 +8,9 @@ use App\Models\Article;
 
 Route::get('/', [PublicController::class, 'homepage'])->name('homepage');
 Route::get('/search/article', [PublicController::class, 'searchArticles'])->name('article.search');
+// Cambio lingua
+Route::post('/lingua/{lang}', [PublicController::class, 'setLanguage'])->name('setLocale');
+
 
 // Article
 Route::get('/create/article', [ArticleController::class, 'create'])->name('create.article');
