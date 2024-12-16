@@ -2,11 +2,10 @@
     <div class="card">
         <span class="premium-label"></span>
         <div class="card-img">
-            {{-- Mostra l'immagine dell'articolo o quella di default --}}
             <img 
                 src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : asset('media/default/default.jpg') }}" 
                 alt="Immagine dell'articolo {{ $article->title }}" 
-                class="card-img-top">
+                class="card-img-top img-border">
         </div>
         <div class="card-info">
             <h3 class="text-title">{{ $article->title }}</h3>

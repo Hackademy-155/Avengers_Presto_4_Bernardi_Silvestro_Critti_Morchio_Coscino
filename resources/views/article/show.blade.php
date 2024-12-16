@@ -1,64 +1,65 @@
 <x-layout>
-    <section class="d-flex justify-content-center align-items-center show">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 text-center mt-5 mb-2">
-                    <h1 class="article-title">{{ $article->title }}</h1>
-                    <p class="text-secondary opacity-75">Click on photos to see more...</p>
-                    <h4>
-                        <a class="article-category fw-semibold"
-                            href="{{ route('byCategory', ['category' => $article->category]) }}">
-                            {{ $article->category->name }}
-                        </a>
-                    </h4>
-                </div>
+    <section class="container align-items-center">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mt-5 mb-2">
+                <h1 class="article-title">{{ $article->title }}</h1>
+                <p class="text-secondary opacity-50">Click on photos to see more...</p>
+                <h4>
+                    <a class="article-category" href="{{ route('byCategory', ['category' => $article->category]) }}">
+                        {{ $article->category->name }}
+                    </a>
+                </h4>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 mb-3">
-                    @if ($article->images->count() > 1)
-                        <div id="carouselExample" class="carousel slide shadow rounded">
-                            <div class="carousel-inner">
-                                @foreach ($article->images as $key => $image)
-                                    <div class="carousel-item @if ($loop->first) active @endif">
-                                        <img src="{{ $image->getUrl(300, 300) }}"
-                                            class="d-block w-100 rounded shadow-sm"
-                                            alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
-                                    </div>
-                                @endforeach
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-7 d-flex justify-content-center">
+                <div class="article-carousel">
+                    @if ($article->images->count() > 0)
+                        @foreach ($article->images as $key => $image)
+                            <input type="radio" name="slider" id="article-item-{{ $key + 1 }}" class="d-none" 
+                                @if ($loop->first) checked @endif>
+                        @endforeach
+                        <div class="cards">
+                            @foreach ($article->images as $key => $image)
+                                <label class="card-carousel" for="article-item-{{ $key + 1 }}" id="article-image-{{ $key + 1 }}">
+                                    <img src="{{ $image->getUrl(300, 300) }}" alt="Article Image {{ $key + 1 }}">
+                                </label>
+                            @endforeach
                         </div>
                     @else
-                        <img src="https://picsum.photos/300" class="rounded shadow"
-                            alt="Nessuna foto inserita dall'utente">
+                        @foreach (range(1, 3) as $key)
+                            <input type="radio" name="slider" id="article-item-{{ $key }}" class="d-none" 
+                                @if ($key === 1) checked @endif>
+                        @endforeach
+                        <input type="radio" name="slider" id="article-item-1" class="d-none" checked>
+                        <div class="cards">
+                            @foreach (range(1, 3) as $key)
+                                <label class="card-carousel" for="article-item-{{ $key }}" id="article-image-{{ $key }}">
+                                    <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image {{ $key }}">
+                                </label>
+                            @endforeach
+                            <label class="card-carousel" for="article-item-1" id="article-image-1">
+                                <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image 1">
+                            </label>
+                        </div>
                     @endif
+                    
                 </div>
-                <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
-                    <div class="article-content bg-white p-4 rounded shadow-sm border">
-                        <h2 class="article-price mb-4 text-primary fw-bold">Product Details</h2>
-                        <p class="article-description text-secondary">{{ $article->description }}</p>
-                        <h4 class="article-price text-danger fw-bold">${{ $article->price }}</h4>
-                        @auth
-                            @if (Auth::user()->is_revisor)
-                                <form method="POST" action="{{ route('article.cancel', $article) }}" class="mt-4">
-                                    @csrf
-                                    @method('PATCH')
-                                    <button type="submit" class="btn btn-danger btn-sm shadow">
-                                        Undo last operation
-                                    </button>
-                                </form>
-                            @endif
-                        @endauth
-                    </div>
+            </div>
+            <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
+                <div class="article-content">
+                    <h2 class="article-price mb-4">Product Details</h2>
+                    <p class="article-description">{{ $article->description }}</p>
+                    <h4 class="article-price">${{ $article->price }}</h4>
+                    @auth
+                        @if (Auth::user()->is_revisor)
+                            <form method="POST" action="{{ route('article.cancel', $article) }}">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="delete-btn mt-4">Undo last operation</button>
+                            </form>
+                        @endif
+                    @endauth
                 </div>
             </div>
         </div>
