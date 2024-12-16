@@ -1,4 +1,3 @@
-
 // Funzioni per i controlli del carosello
 function prevSlide() {
     const slides = document.querySelectorAll('input[name="slider"]');
@@ -13,9 +12,6 @@ function nextSlide() {
     const nextIndex = (activeIndex === slides.length - 1) ? 0 : activeIndex + 1;
     slides[nextIndex].checked = true;
 }
-
-
-
 
 // ICONA LENTE PER BARRA DI RICERCA
 const searchIcon = document.querySelector('#searchIcon');

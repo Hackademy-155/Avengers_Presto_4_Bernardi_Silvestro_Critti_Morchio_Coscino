@@ -54,14 +54,14 @@
                 </a>
                 <div class="d-flex align-items-center">
 
-                    <li class="">
-                        <x-_locale lang="it" />
+                    <li>
+                        <x-_locale lang="it"/>
                     </li>
                     <li>
-                        <x-_locale lang="en" />
+                        <x-_locale lang="en"/>
                     </li>
                     <li>
-                        <x-_locale lang="es" />
+                        <x-_locale lang="es"/>
                     </li>
 
                     <li id="buttonDark" class="nav-link">
