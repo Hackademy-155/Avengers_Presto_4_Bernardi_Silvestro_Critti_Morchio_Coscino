@@ -54,8 +54,8 @@
                 </a>
                 <div class="d-flex align-items-center">
 
-                    <li>
-                       <x-_locale lang="it" />
+                    <li class="">
+                        <x-_locale lang="it" />
                     </li>
                     <li>
                         <x-_locale lang="en" />

@@ -1,3 +1,22 @@
+
+// Funzioni per i controlli del carosello
+function prevSlide() {
+    const slides = document.querySelectorAll('input[name="slider"]');
+    const activeIndex = [...slides].findIndex(slide => slide.checked);
+    const prevIndex = (activeIndex === 0) ? slides.length - 1 : activeIndex - 1;
+    slides[prevIndex].checked = true;
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll('input[name="slider"]');
+    const activeIndex = [...slides].findIndex(slide => slide.checked);
+    const nextIndex = (activeIndex === slides.length - 1) ? 0 : activeIndex + 1;
+    slides[nextIndex].checked = true;
+}
+
+
+
+
 // ICONA LENTE PER BARRA DI RICERCA
 const searchIcon = document.querySelector('#searchIcon');
 const searchForm = document.querySelector('#searchForm');
@@ -45,6 +64,8 @@ if (mode === 'dark') {
     button.classList.add('btn-outline-dark');
     button.classList.remove('btn-outline-light');
 };
+
+
 
 
 
