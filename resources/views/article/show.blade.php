@@ -32,20 +32,16 @@
                         </div>
                     @else
                         {{-- Nessuna immagine: usa immagine di default --}}
-                        @foreach (range(1, 3) as $key)
-                            <input type="radio" name="slider" id="article-item-{{ $key }}" class="d-none" 
-                                @if ($key === 1) checked @endif>
-                        @endforeach
-                
+                        <input type="radio" name="slider" id="article-item-1" class="d-none" checked>
+                    
                         <div class="cards">
-                            {{-- Genera i label con l'immagine di default --}}
-                            @foreach (range(1, 3) as $key)
-                                <label class="card-carousel" for="article-item-{{ $key }}" id="article-image-{{ $key }}">
-                                    <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image {{ $key }}">
-                                </label>
-                            @endforeach
+                            {{-- Genera un'unica immagine di default --}}
+                            <label class="card-carousel" for="article-item-1" id="article-image-1">
+                                <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image 1">
+                            </label>
                         </div>
                     @endif
+                    
                 </div>
                 
                 
