@@ -10,8 +10,9 @@ use Spatie\Image\Image as SpatieImage;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Google\Cloud\Vision\V1\ImageAnnotatorClient;
+
 use Illuminate\Foundation\Bus\Dispatchable;
+use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class RemoveFaces implements ShouldQueue
 {
