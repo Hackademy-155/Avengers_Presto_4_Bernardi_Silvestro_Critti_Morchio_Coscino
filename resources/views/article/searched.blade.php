@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row py-5 justify-content-center align-items-center text-center">
             <div class="col-12">
-                <h1 class="article-title">Search results for "<span class="fst-italic fw-bold">{{ $query }}</span>"
+                <h1 class="article-title">{{ __('ui.Searchresultsfor') }}"<span class="fst-italic fw-bold">{{ $query }}</span>"
                 </h1>
             </div>
         </div>

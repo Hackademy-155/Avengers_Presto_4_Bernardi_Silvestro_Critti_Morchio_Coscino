@@ -2,11 +2,11 @@
     <div class="container pt-5">
         <div class="row">
             <div class="col-12 text-center mb-4">
-                <h1 class="article-title">Welcome to your revision area!</h1>
+                <h1 class="article-title">{{ __('ui.Welcometoyourrevisionarea') }}!</h1>
             </div>
         </div>
         <section class="p-4 container">
-            <h2 class="text-center mb-4 title">Articoli da controllare</h2>
+            <h2 class="text-center mb-4 title">{{ __('ui.Itemstocheckout') }}</h2>
             @if ($article_to_check)
                 <div class="row justify-content-center mb-5">
                     <div class="row p-4 text-center justify-content-center align-items-center w-100">
@@ -21,12 +21,12 @@
                                     <form action="{{ route('reject', ['article' => $article_to_check]) }}" method="POST">
                                         @csrf
                                         @method('PATCH')
-                                        <button class="delete-btn">Rifiuta</button>
+                                        <button class="delete-btn">{{ __('ui.Refuse') }}</button>
                                     </form>
                                     <form action="{{ route('accept', ['article' => $article_to_check]) }}" method="POST">
                                         @csrf
                                         @method('PATCH')
-                                        <button class="accept-btn">Accetta</button>
+                                        <button class="accept-btn">{{ __('ui.Accept') }}</button>
                                     </form>
                                 </div>
                             </div>
@@ -45,10 +45,10 @@
             @else
                 <div class="row justify-content-center align-items-center text-center">
                     <div class="col-12 col-md-6">
-                        <h2 class="article-title text-decoration-underline">Nessun articolo da revisionare</h2>
+                        <h2 class="article-title text-decoration-underline">{{ __('ui.Noitemstoreview') }}</h2>
                         <div class="d-flex justify-content-center align-items-center">
                             <a href="{{ route('homepage') }}" class="home-btn rounded-pill text-decoration-none">
-                                Torna alla homepage <i class="bi bi-house-door-fill ms-2"></i>
+                                {{ __('ui.Backtohomepage') }}<i class="bi bi-house-door-fill ms-2"></i>
                             </a>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
             @endif
         </section>
         <section class="p-4 container">
-            <h3 class="text-center mb-4 title">Ultimi 5 articoli revisionati</h3>
+            <h3 class="text-center mb-4 title">{{ __('ui.Last5articlesreviewed') }}</h3>
             @if(isset($last_checked_articles) && $last_checked_articles->count() > 0)
                 <div class="row gy-3">
                     @foreach ($last_checked_articles as $article)
@@ -65,9 +65,9 @@
                             <span>{{ $article->user->name }}</span>
                             <span>
                                 @if ($article->is_accepted)
-                                    <span class="text-success">Accettato</span>
+                                    <span class="text-success">{{ __('ui.Accepted') }}</span>
                                 @else
-                                    <span class="text-danger">Rifiutato</span>
+                                    <span class="text-danger">{{ __('ui.Rejected') }}</span>
                                 @endif
                             </span>
                             <span>{{ $article->updated_at->format('d/m/Y H:i') }}</span>
@@ -75,7 +75,7 @@
                     @endforeach
                 </div>
             @else
-                <p class="text-center">Non ci sono articoli revisionati di recente.</p>
+                <p class="text-center">{{ __('ui.Therearenorecentlyreviewedarticles.') }}</p>
             @endif
         </section>
         @if (session()->has('message'))

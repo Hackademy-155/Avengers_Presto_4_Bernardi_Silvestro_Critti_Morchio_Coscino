@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Articles by categories 
+                <h1 class="my-5 text-center auth-spacing">{{ __('ui.Articlesbycategories') }}
                     <span class="fst-italic text-decoration-underline">{{ $category->name }}</span>
                 </h1>
             </div>
@@ -14,12 +14,12 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3 class="emoji-color">No articles have been added yet</h3>
+                    <h3 class="emoji-color">{{ __('ui.Noarticleshavebeenaddedyet') }}</h3>
                     <i class="bi bi-emoji-frown emoji-color fs-1"></i>
                     @auth
                         <div class="d-flex justify-content-center py-4">
                             <a href="{{ route('create.article') }}" class="text-decoration-none">
-                                <button class="btn-primary rounded-pill">Insert Article
+                                <button class="btn-primary rounded-pill">{{ __('ui.InsertArticle') }}
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
                                         class="bi bi-file-earmark-plus btn-icon" viewBox="2 -1 12 20">
                                         <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5" />

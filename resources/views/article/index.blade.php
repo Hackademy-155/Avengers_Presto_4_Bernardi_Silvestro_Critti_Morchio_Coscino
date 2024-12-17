@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">All articles</h1>
+                <h1 class="my-5 text-center auth-spacing">{{ __('ui.Allarticles') }}</h1>
             </div>
         </div>
         <div class="row justify-content-center align-items-center py-5">
@@ -12,7 +12,7 @@
                 </div>
             @empty
                 <div class="col-12 text-center">
-                    <h3 class="emoji-color">No articles have been added yet</h3>
+                    <h3 class="emoji-color">{{ __('ui.Noarticleshavebeenaddedyet') }}</h3>
                     <i class="bi bi-emoji-frown emoji-color fs-1"></i>
                 </div>
             @endforelse

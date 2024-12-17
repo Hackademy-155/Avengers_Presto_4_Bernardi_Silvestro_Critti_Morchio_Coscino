@@ -10,7 +10,7 @@
         <div class="card-info">
             <h3 class="text-title">{{ $article->title }}</h3>
             <h4 class="text-body pt-3">
-                <a href="{{ route('byCategory', ['category' => $article->category]) }}">{{ $article->category->name }}</a>
+                <a href="{{ route('byCategory', ['category' => $article->category]) }}">{{ __('ui.' . $article->category->name) }}</a>
             </h4>
         </div>
         <div class="card-footer">
