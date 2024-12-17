@@ -25,7 +25,7 @@ return
     'PublicAnArticle' => 'Public an article',
     'Title' => 'Title',
     'InsertTitle' => 'Insert Title',
-    'InsertDescription' => 'Insert Article',
+    'InsertDescription' => 'Description',
     'SelectCategories' => 'Select Category',
     'Price' => 'Price',
     'InsertPrice' => 'Insert Price',

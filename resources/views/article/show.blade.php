@@ -14,20 +14,36 @@
         <div class="row justify-content-center">
             <div class="col-12 col-md-7 d-flex justify-content-center">
                 <div class="article-carousel">
-                    <input type="radio" name="slider" id="article-item-1" class="d-none">
-                    <input type="radio" name="slider" id="article-item-2" class="d-none">
-                    <input type="radio" name="slider" id="article-item-3" class="d-none">
-                    <div class="cards">
-                        <label class="card-carousel" for="article-item-1" id="article-image-1">
-                            <img src="/media/default/default.jpg" alt="Article Image 1">
-                        </label>
-                        <label class="card-carousel" for="article-item-2" id="article-image-2">
-                            <img src="/media/default/default.jpg" alt="Article Image 2">
-                        </label>
-                        <label class="card-carousel" for="article-item-3" id="article-image-3">
-                            <img src="/media/default/default.jpg" alt="Article Image 3">
-                        </label>
-                    </div>
+                    @if ($article->images->count() > 0)
+                        @foreach ($article->images as $key => $image)
+                            <input type="radio" name="slider" id="article-item-{{ $key + 1 }}" class="d-none" 
+                                @if ($loop->first) checked @endif>
+                        @endforeach
+                        <div class="cards">
+                            @foreach ($article->images as $key => $image)
+                                <label class="card-carousel" for="article-item-{{ $key + 1 }}" id="article-image-{{ $key + 1 }}">
+                                    <img src="{{ $image->getUrl(300, 300) }}" alt="Article Image {{ $key + 1 }}">
+                                </label>
+                            @endforeach
+                        </div>
+                    @else
+                        @foreach (range(1, 3) as $key)
+                            <input type="radio" name="slider" id="article-item-{{ $key }}" class="d-none" 
+                                @if ($key === 1) checked @endif>
+                        @endforeach
+                        <input type="radio" name="slider" id="article-item-1" class="d-none" checked>
+                        <div class="cards">
+                            @foreach (range(1, 3) as $key)
+                                <label class="card-carousel" for="article-item-{{ $key }}" id="article-image-{{ $key }}">
+                                    <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image {{ $key }}">
+                                </label>
+                            @endforeach
+                            <label class="card-carousel" for="article-item-1" id="article-image-1">
+                                <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image 1">
+                            </label>
+                        </div>
+                    @endif
+                    
                 </div>
             </div>
             <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
@@ -48,33 +64,4 @@
             </div>
         </div>
     </section>
-    {{-- da adattare qui --}}
-    <div class="col-12 col-md-6 mb-3 ">
-        @if ($article->images->count() > 0)
-            <div id="carouselExample" class="carousel slide ">
-                <div class="carousel-inner">
-                    @foreach ($article->images as $key => $image)
-                        <div class="carousel-item @if ($loop->first) active @endif">
-                            <img src="{{ Storage::url($image->path) }}" class="d-block w-100 rounded shadow"
-                                alt="Immagine {{ $key + 1 }} dell'articolo {{ $article->title }}">
-                        </div>
-                    @endforeach
-                </div>
-                @if ($article->images->count() > 1)
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                @endif
-            </div>
-        @else
-            <img src="https://picsum.photos/300" alt="Nessuna foto inserita dall'utente">
-        @endif
-    </div>
 </x-layout>

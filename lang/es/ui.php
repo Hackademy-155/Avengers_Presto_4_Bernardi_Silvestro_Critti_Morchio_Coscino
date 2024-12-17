@@ -25,7 +25,7 @@ return
     'PublicAnArticle' => 'Publico un articulo',
     'Title' => 'Título',
     'InsertTitle' => 'Insertar Título',
-    'InsertDescription' => 'Insertar Artículo',
+    'InsertDescription' => 'Descripción',
     'SelectCategories' => 'Seleccionar Categoría',
     'Price' => 'Precio',
     'InsertPrice' => 'Insertar Precio',
