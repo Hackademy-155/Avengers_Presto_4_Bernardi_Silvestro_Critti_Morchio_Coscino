@@ -30,15 +30,55 @@
                                     </form>
                                 </div>
                             </div>
-                            <div class="col-12 col-md-10 d-flex justify-content-center">
-                                <div class="d-flex justify-content-start flex-row flex-wrap">
-                                    @foreach ($article_to_check->images as $key => $image)
-                                        <div class="mb-3">
+                            <div class="col-12 col-md-10 mx-auto">
+                                @foreach ($article_to_check->images as $key => $image)
+                                    <div class="row mb-4 align-items-center">
+                                        <!-- Colonna immagine -->
+                                        <div class="col-12 col-md-4 text-center">
                                             <img src="{{ $image->getUrl(300, 300) }}" class="img-fluid rounded-3 shadow-sm" alt="Immagine {{$key + 1}} dell'articolo {{ $article_to_check->title }}">
                                         </div>
-                                    @endforeach
-                                </div>
+                                        <!-- Colonna informazioni -->
+                                        <div class="col-12 col-md-8">
+                                            <div class="card-body">
+                                                <h5>Labels</h5>
+                                                @if ($image->labels)
+                                                    @foreach ($image->labels as $label)
+                                                        <span class="badge bg-primary">#{{ $label }}</span>
+                                                    @endforeach
+                                                @else
+                                                    <p class="fst-italic">No labels</p>
+                                                @endif
+                            
+                                                <h5 class="mt-3">Ratings</h5>
+                                                <ul class="list-group list-group-flush">
+                                                    <li class="list-group-item">
+                                                        <span class="fw-bold">Adult:</span>
+                                                        <span class="{{ $image->adult }}">{{ $image->adult }}</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="fw-bold">Violence:</span>
+                                                        <span class="{{ $image->violence }}">{{ $image->violence }}</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="fw-bold">Spoof:</span>
+                                                        <span class="{{ $image->spoof }}">{{ $image->spoof }}</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="fw-bold">Racy:</span>
+                                                        <span class="{{ $image->racy }}">{{ $image->racy }}</span>
+                                                    </li>
+                                                    <li class="list-group-item">
+                                                        <span class="fw-bold">Medical:</span>
+                                                        <span class="{{ $image->medical }}">{{ $image->medical }}</span>
+                                                    </li>
+                                                </ul>
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
+                            
                         </div>
                     </div>
                 </div>
