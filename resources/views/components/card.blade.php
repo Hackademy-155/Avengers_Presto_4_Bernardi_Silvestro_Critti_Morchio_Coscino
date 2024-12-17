@@ -2,8 +2,10 @@
     <div class="card">
         <span class="premium-label"></span>
         <div class="card-img">
-            {{-- style="height: 200px; background-image: url('/media/default/default.jpg'); background-size: cover; background-position: center;"> --}}
-            <img src="{{$article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : 'https://picsum.photos/200'}}" alt="Immagine dell'articolo {{$article->title}}" class="card-img-top">
+            <img 
+                src="{{ $article->images->isNotEmpty() ? $article->images->first()->getUrl(300, 300) : asset('media/default/default.jpg') }}" 
+                alt="Immagine dell'articolo {{ $article->title }}" 
+                class="card-img-top img-border">
         </div>
         <div class="card-info">
             <h3 class="text-title">{{ $article->title }}</h3>
