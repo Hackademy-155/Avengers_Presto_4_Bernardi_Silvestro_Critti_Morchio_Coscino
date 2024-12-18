@@ -5,7 +5,7 @@
 @endif
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 justify-content-center">
+        <div class="col-12 col-md-12 justify-content-center">
             <form class="form" wire:submit='store'>
                 <div class="flex-column">
                     <label for="title">{{ __('ui.Title') }}:</label>
@@ -58,7 +58,8 @@
                 </div>
                 <div class="mb-3">
                     <input type="file" wire:model.live="temporary_images" multiple
-                        class="form-control shadow @error('temporary_images.* ') is-invalid @enderror" placeholder="Img/">
+                        class="form-control shadow @error('temporary_images.* ') is-invalid @enderror"
+                        placeholder="Img/">
                     @error('temporary_images.* ')
                         <p class="fst-italic text-danger">{{ $message }}</p>
                     @enderror
@@ -67,23 +68,26 @@
                     @enderror
                 </div>
                 @if (!empty($images))
-                <div class="row">
-                    <div class="col-12">
-                        <p>Photo preview:</p>
-                        <div class="row border border-4 rounded shadow py-4">
-                            @foreach ($images as $key => $image)
-                                <div class="col d-flex flex-column align-items-center my-3 position-relative">
-                                    <div class="img-preview mx-auto shadow rounded"
-                                         style="background-image: url({{ $image->temporaryUrl() }});">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="preview">Photo preview:</p>
+                            <div class="row border border-4 rounded shadow py-4">
+                                @foreach ($images as $key => $image)
+                                    <div class="col d-flex flex-column align-items-center my-3 position-relative">
+                                        <div class="img-preview mx-auto shadow rounded"
+                                            style="background-image: url({{ $image->temporaryUrl() }});">
+                                            <button class="bg-transparent border-0 position-absolute top-0 p-2"
+                                                style="z-index: 10;">
+                                                <i class="bi bi-x-circle-fill fs-4 text-danger"
+                                                    wire:click="removeImage({{ $key }})"></i>
+                                            </button>
+                                        </div>
                                     </div>
-                                    <button type="button" class="bi bi-x-lg position-absolute top-0 end-0 m-2 
-                                    rounded-circle text-white bg-danger border-0 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 14px;" wire:click="removeImage({{ $key }})"></button>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
-                </div>
-            @endif
+                @endif
                 <button type="submit" class="button-submit rounded-pill reviewer-btn">{{ __('ui.Publish') }}</button>
             </form>
         </div>

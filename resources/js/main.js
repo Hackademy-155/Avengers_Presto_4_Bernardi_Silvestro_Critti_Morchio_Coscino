@@ -1,5 +1,3 @@
-
-
 // ICONA LENTE PER BARRA DI RICERCA
 const searchIcon = document.querySelector('#searchIcon');
 const searchForm = document.querySelector('#searchForm');

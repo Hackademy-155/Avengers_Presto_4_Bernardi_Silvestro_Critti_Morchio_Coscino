@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row justify-content-between align-items-center">
             <div class="col-lg-5">
-                <div class="intro-excerpt">
+                <div class="intro-excerpt animate__animated animate__fadeInLeft" >
                     <h1 style="font-family: 'Parkinsans'">{{ __('ui.theplacewhereyoucanbuy') }} <span class="text-decoration-underline">{{ __('ui.everything') }} </span></h1>
                     <p class="mb-4 fs-5">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam vulputate velit imperdiet dolor tempor tristique.</p>
                     <a href="{{route('create.article')}}" class="text-decoration-none media-btn">
@@ -18,7 +18,7 @@
                     </a>                    
                 </div>
             </div>
-            <div class="col-lg-7">
+            <div class="col-lg-7 animate__animated animate__fadeInRight">
                 <div class="d-flex justify-content-center align-items-center">
                     <img class="img-fluid hero-img-wrap" src="./media/header.png">
                 </div>

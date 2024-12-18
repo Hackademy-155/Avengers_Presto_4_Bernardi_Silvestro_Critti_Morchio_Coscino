@@ -112,9 +112,9 @@
 <div class="container-fluid mt-4">
     <div class="row justify-content-center">
         <div class="col-12 col-md-5 search-top">
-            <form id="searchForm" class="d-flex d-none" role="search" action="{{ route('article.search') }}"
+            <form id="searchForm" class="d-flex d-none animate__animated animate__fadeInDown" role="search" action="{{ route('article.search') }}"
                 method="GET">
-                <input class="form-control me-2 searching rounded-pill" type="search" name="query"
+                <input class="form-control me-2 searching rounded-pill animate__animated animate__fadeInDown" type="search" name="query"
                     placeholder="Type something..." aria-label="Search">
                 <button class="btn btn-outline-primary reviewer-btn mt-0 rounded-pill" type="submit">{{ __('ui.Search') }}</button>
             </form>

@@ -5,8 +5,8 @@
                 <h1 class="article-title">Welcome to your revision area!</h1>
             </div>
         </div>
-        <section class="p-4 container">
-            <h2 class="text-center mb-5 title">Articoli da controllare</h2>
+        <section class="p-4 container container-color rounded-5 mb-5">
+            <h2 class="text-center mb-5 title mt-5">Articoli da controllare</h2>
             <hr class="pt-5 hr-color">
             @if (session()->has('message'))
                 <div class="row justify-content-center">

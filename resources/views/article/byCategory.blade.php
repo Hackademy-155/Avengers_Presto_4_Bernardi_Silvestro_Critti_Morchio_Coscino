@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Articles by categories 
+                <h1 class="my-5 text-center auth-spacing animate__animated animate__fadeInDown">Articles by categories 
                     <span class="fst-italic text-decoration-underline">{{ $category->name }}</span>
                 </h1>
             </div>

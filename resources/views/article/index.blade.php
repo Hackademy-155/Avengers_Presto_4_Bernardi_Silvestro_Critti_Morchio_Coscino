@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">All articles</h1>
+                <h1 class="my-5 text-center auth-spacing animate__animated animate__fadeInDown">All articles</h1>
             </div>
         </div>
         <hr class="m-5 hr-color">

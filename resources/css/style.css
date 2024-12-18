@@ -724,3 +724,11 @@
 .page-activated:hover{
     color: #57231e;
 }
+
+#btnX:hover{
+    color: #983F37 !important;
+}
+
+.container-color{
+    background-color: #e3c6ab74;
+}
