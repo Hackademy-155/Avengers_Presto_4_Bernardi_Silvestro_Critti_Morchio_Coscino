@@ -2,15 +2,20 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
+<<<<<<< HEAD
                 <h1 class="my-5 text-center auth-spacing">{{ __('ui.Articlesbycategories') }}
+=======
+                <h1 class="my-5 text-center auth-spacing animate__animated animate__fadeInDown">Articles by categories 
+>>>>>>> b4bf1609433c62d5c4e624d34914bbcb549187b9
                     <span class="fst-italic text-decoration-underline">{{ $category->name }}</span>
                 </h1>
             </div>
         </div>
+        <hr class="m-5 hr-color">
         <div class="row justify-content-center align-items-center py-5">
-            @forelse ($articles as $article)
-                <div class="col-12 col-md-3">
-                    <x-card :article="$article" />
+            @forelse ($articles as $key=>$article)
+                <div class="col-12 col-md-3" id="new2">
+                    <x-card :article="$article" key="{{$key}}"/>
                 </div>
             @empty
                 <div class="col-12 text-center">
@@ -32,5 +37,6 @@
                 </div>
             @endforelse
         </div>
+        <hr class="m-5 hr-color">
     </div>
 </x-layout>

@@ -7,9 +7,9 @@
             </div>
         </div>
         <div class="row justify-content-center align-items-center py-5">
-            @forelse ($articles as $article)
-                <div class="col-12 col-md-3">
-                    <x-card :article="$article" />
+            @forelse ($articles as $key=>$article)
+                <div class="col-12 col-md-3" id="new2">
+                    <x-card :article="$article" key="{{$key}}"/>
                 </div>
             @empty
                 <div class="col-12 text-center">

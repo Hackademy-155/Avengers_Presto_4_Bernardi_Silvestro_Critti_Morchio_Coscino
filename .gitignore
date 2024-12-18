@@ -21,4 +21,8 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+<<<<<<< HEAD
 google_credential.json
+=======
+google_credential.json
+>>>>>>> b4bf1609433c62d5c4e624d34914bbcb549187b9

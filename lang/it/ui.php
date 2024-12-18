@@ -3,6 +3,7 @@
 return
   [
     'hello' => 'Ciao',
+    'ultimiArticoli' => 'Ultimi articoli inseriti',
     'allArticles' => 'Tutti gli articoli',
     'Electronics'=> 'Elettronica',
     'Clothes'=> 'Vestiti',

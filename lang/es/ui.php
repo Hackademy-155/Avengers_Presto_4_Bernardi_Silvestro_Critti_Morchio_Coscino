@@ -3,6 +3,7 @@
 return
   [
     'hello' => 'Hola',
+    'ultimiArticoli' => 'Últimos artículos insertados',
     'allArticles' => 'todos los articulos',
     'Electronics' => 'Electrónica',
     'Clothes' => 'Ropa',
