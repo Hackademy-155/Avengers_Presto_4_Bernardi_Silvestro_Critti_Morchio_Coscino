@@ -53,23 +53,23 @@
                                                 <ul class="list-group list-group-flush">
                                                     <li class="list-group-item">
                                                         <span class="fw-bold">Adult:</span>
-                                                        <span class="{{ $image->adult }}">{{ $image->adult }}</span>
+                                                        <span class="{{ $image->adult }}"></span>
                                                     </li>
                                                     <li class="list-group-item">
                                                         <span class="fw-bold">Violence:</span>
-                                                        <span class="{{ $image->violence }}">{{ $image->violence }}</span>
+                                                        <span class="{{ $image->violence }}"></span>
                                                     </li>
                                                     <li class="list-group-item">
                                                         <span class="fw-bold">Spoof:</span>
-                                                        <span class="{{ $image->spoof }}">{{ $image->spoof }}</span>
+                                                        <span class="{{ $image->spoof }}"></span>
                                                     </li>
                                                     <li class="list-group-item">
                                                         <span class="fw-bold">Racy:</span>
-                                                        <span class="{{ $image->racy }}">{{ $image->racy }}</span>
+                                                        <span class="{{ $image->racy }}"></span>
                                                     </li>
                                                     <li class="list-group-item">
                                                         <span class="fw-bold">Medical:</span>
-                                                        <span class="{{ $image->medical }}">{{ $image->medical }}</span>
+                                                        <span class="{{ $image->medical }}"></span>
                                                     </li>
                                                 </ul>
                                                 <hr>
