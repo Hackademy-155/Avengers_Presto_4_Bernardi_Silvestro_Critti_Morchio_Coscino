@@ -1,7 +1,7 @@
 <x-layout>
-    <section class="container align-items-center">
-        <div class="row justify-content-center">
-            <div class="col-12 text-center mt-5 mb-2">
+    <div class="container w-100 d-flex flex-column justify-content-center align-items-center">
+        <div class="row justify-content-center w-100">
+            <div class="col-12 text-center mt-5 mb-4">
                 <h1 class="article-title">{{ $article->title }}</h1>
                 <p class="text-secondary opacity-50">Click on photos to see more...</p>
                 <h4>
@@ -10,43 +10,44 @@
                     </a>
                 </h4>
             </div>
+            {{-- <hr class="m-5 py-5 hr-color"> --}}
         </div>
-        <div class="row justify-content-center">
-            <div class="col-12 col-md-7 d-flex justify-content-center">
-                <div class="article-carousel">
+        <div class="row justify-content-center myBorder">
+            <div class="col-12 col-lg-6">
+                <div class="article-show-gallery">
                     @if ($article->images->count() > 0)
-                        @foreach ($article->images as $key => $image)
-                            <input type="radio" name="slider" id="article-item-{{ $key + 1 }}" class="d-none" 
-                                @if ($loop->first) checked @endif>
-                        @endforeach
-                        <div class="cards">
-                            @foreach ($article->images as $key => $image)
-                                <label class="card-carousel" for="article-item-{{ $key + 1 }}" id="article-image-{{ $key + 1 }}">
-                                    <img src="{{ $image->getUrl(300, 300) }}" alt="Article Image {{ $key + 1 }}">
-                                </label>
-                            @endforeach
-                        </div>
-                    @else
-                        @foreach (range(1, 3) as $key)
-                            <input type="radio" name="slider" id="article-item-{{ $key }}" class="d-none" 
-                                @if ($key === 1) checked @endif>
-                        @endforeach
-                        <input type="radio" name="slider" id="article-item-1" class="d-none" checked>
-                        <div class="cards">
-                            @foreach (range(1, 3) as $key)
-                                <label class="card-carousel" for="article-item-{{ $key }}" id="article-image-{{ $key }}">
-                                    <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image {{ $key }}">
-                                </label>
-                            @endforeach
-                            <label class="card-carousel" for="article-item-1" id="article-image-1">
-                                <img src="{{ asset('media/default/default.jpg') }}" alt="Default Image 1">
-                            </label>
+                        <div id="articleCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                @foreach ($article->images as $key => $image)
+                                    <button type="button" data-bs-target="#articleCarousel"
+                                        data-bs-slide-to="{{ $key }}" class="{{ $key === 0 ? 'active' : '' }}"
+                                        aria-label="Slide {{ $key + 1 }}">
+                                    </button>
+                                @endforeach
+                            </div>
+
+                            <div class="carousel-inner">
+                                @foreach ($article->images as $key => $image)
+                                    <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                        <img src="{{ $image->getUrl(1000, 1000) }}" class="d-block w-100 rounded shadow"
+                                            alt="Immagine {{ $key + 1 }} - {{ $article->title }}">
+                                    </div>
+                                @endforeach
+                            </div>
+
+                            <button class="carousel-control-prev" type="button" data-bs-target="#articleCarousel"
+                                data-bs-slide="prev">
+                                <i class="bi bi-arrow-bar-left fs-3 account"></i>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#articleCarousel"
+                                data-bs-slide="next">
+                                <i class="bi bi-arrow-bar-right fs-3 account"></i>
+                            </button>
                         </div>
                     @endif
-                    
                 </div>
             </div>
-            <div class="col-12 col-md-5 d-flex justify-content-center align-items-center">
+            <div class="col-12 col-md-5 d-flex justify-content-center align-items-center mb-5">
                 <div class="article-content">
                     <h2 class="article-price mb-4">Product Details</h2>
                     <p class="article-description">{{ $article->description }}</p>
@@ -62,6 +63,7 @@
                     @endauth
                 </div>
             </div>
+            {{-- <hr class="m-5 hr-color"> --}}
         </div>
-    </section>
+    </div>
 </x-layout>
