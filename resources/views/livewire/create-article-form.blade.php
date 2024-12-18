@@ -67,22 +67,23 @@
                     @enderror
                 </div>
                 @if (!empty($images))
-                    <div class="row">
-                        <div class="col-12">
-                            <p class="">Photo preview: </p>
-                            <div class="row border border-4 rounded shadow py-4">
-                                @foreach ($images as $key => $image)
-                                    <div class="col d-flex flex-column align-items-center my-3">
-                                        <div class="img-preview mx-auto shadow rounded"
-                                            style="background-image: url({{ $image->temporaryUrl() }});">
-                                        </div>
-                                        <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">X</button>
+                <div class="row">
+                    <div class="col-12">
+                        <p>Photo preview:</p>
+                        <div class="row border border-4 rounded shadow py-4">
+                            @foreach ($images as $key => $image)
+                                <div class="col d-flex flex-column align-items-center my-3 position-relative">
+                                    <div class="img-preview mx-auto shadow rounded"
+                                         style="background-image: url({{ $image->temporaryUrl() }});">
                                     </div>
-                                @endforeach
-                            </div>
+                                    <button type="button" class="bi bi-x-lg position-absolute top-0 end-0 m-2 
+                                    rounded-circle text-white bg-danger border-0 d-flex align-items-center justify-content-center" style="width: 20px; height: 20px; font-size: 14px;" wire:click="removeImage({{ $key }})"></button>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
-                @endif
+                </div>
+            @endif
                 <button type="submit" class="button-submit rounded-pill reviewer-btn">{{ __('ui.Publish') }}</button>
             </form>
         </div>

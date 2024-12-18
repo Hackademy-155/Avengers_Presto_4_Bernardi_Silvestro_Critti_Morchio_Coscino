@@ -5,6 +5,7 @@
                 <h1 class="my-5 text-center auth-spacing">{{ __('ui.PublicAnArticle') }}</h1>
             </div>
         </div>
+        <hr class="m-5 hr-color">
     </div>
     <div class="container my-5">
         <div class="row justify-content-center">
@@ -12,5 +13,6 @@
                 <livewire:create-article-form />
             </div>
         </div>
+        <hr class="m-5 hr-color">
     </div>
 </x-layout>

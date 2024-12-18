@@ -5,7 +5,7 @@
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
             <ul class="navbar-nav py-5 py-lg-0 mt-1 mb-2 my-lg-0 p-5 mx-auto navbar-freya">
                 <li class="nav-item adjust-navbar">
                     <a class="nav-link" href="/">
