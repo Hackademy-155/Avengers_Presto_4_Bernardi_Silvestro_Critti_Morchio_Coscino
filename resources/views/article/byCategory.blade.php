@@ -2,11 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-<<<<<<< HEAD
                 <h1 class="my-5 text-center auth-spacing">{{ __('ui.Articlesbycategories') }}
-=======
-                <h1 class="my-5 text-center auth-spacing animate__animated animate__fadeInDown">Articles by categories 
->>>>>>> b4bf1609433c62d5c4e624d34914bbcb549187b9
                     <span class="fst-italic text-decoration-underline">{{ $category->name }}</span>
                 </h1>
             </div>

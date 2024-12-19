@@ -54,7 +54,7 @@
 
         <div class="col-12 col-md-8 d-flex justify-content-center align-items-center mb-5">
             <div class="article-content">
-                <h2 class="article-price mb-4">Product Details</h2>
+                <h2 class="article-price mb-4">{{ __('ui.ProducrDetails') }}</h2>
                 <p class="article-description text-break">{{ $article->description }}</p>
                 <h4 class="article-price">${{ $article->price }}</h4>
                 @auth
@@ -62,7 +62,7 @@
                         <form method="POST" action="{{ route('article.cancel', $article) }}">
                             @csrf
                             @method('PATCH')
-                            <button type="submit" class="delete-btn mt-4">Undo last operation</button>
+                            <button type="submit" class="delete-btn mt-4">{{ __('ui.Undolastoperation') }}</button>
                         </form>
                     @endif
                 @endauth

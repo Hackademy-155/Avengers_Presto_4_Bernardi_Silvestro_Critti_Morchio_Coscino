@@ -14,7 +14,7 @@
             @empty
                 <div class="col-12 text-center">
                     <h3 class="emoji-color">
-                        No articles match your search
+                        {{ __('ui. Noarticlesmatchyoursearch') }}
                     </h3>
                     <i class="bi bi-heartbreak emoji-color fs-2"></i>
                 </div>

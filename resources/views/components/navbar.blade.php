@@ -115,7 +115,7 @@
             <form id="searchForm" class="d-flex d-none animate__animated animate__fadeInDown" role="search" action="{{ route('article.search') }}"
                 method="GET">
                 <input class="form-control me-2 searching rounded-pill animate__animated animate__fadeInDown" type="search" name="query"
-                    placeholder="Type something..." aria-label="Search">
+                    placeholder="{{ __('ui.Typesomething...') }}" aria-label="Search">
                 <button class="btn btn-outline-primary reviewer-btn mt-0 rounded-pill" type="submit">{{ __('ui.Search') }}</button>
             </form>
         </div>

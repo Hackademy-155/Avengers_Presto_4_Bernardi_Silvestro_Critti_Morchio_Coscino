@@ -2,11 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-<<<<<<< HEAD
                 <h1 class="my-5 text-center auth-spacing">{{ __('ui.Allarticles') }}</h1>
-=======
-                <h1 class="my-5 text-center auth-spacing animate__animated animate__fadeInDown">All articles</h1>
->>>>>>> b4bf1609433c62d5c4e624d34914bbcb549187b9
             </div>
         </div>
         <hr class="m-5 hr-color">
