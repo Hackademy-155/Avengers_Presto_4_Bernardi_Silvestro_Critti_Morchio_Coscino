@@ -12,15 +12,12 @@ class GoogleVisionSafeSearch implements ShouldQueue
     use Queueable;
 
     private $article_image_id;
-    public function _construct($article_image_id){
-        $this->article_image_id = $article_image_id;
-    }
     /**
      * Create a new job instance.
      */
-    public function __construct()
+    public function __construct($article_image_id)
     {
-        //
+        $this->article_image_id = $article_image_id;
     }
 
     /**
@@ -28,7 +25,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
      */
     public function handle(): void
     {
-        $i = Image :: find($this->article_image_id);
+        $i = Image::find($this->article_image_id);
         if (!$i) {
             return;
         }
@@ -55,6 +52,7 @@ class GoogleVisionSafeSearch implements ShouldQueue
             'text-warning bi bi-exclamation-circle-fill',
             'text-danger bi bi-dash-circle-fill',
         ];
+
         $i->adult = $likelihoodName[$adult];
         $i->spoof = $likelihoodName[$spoof];
         $i->racy = $likelihoodName[$racy];

@@ -5,7 +5,7 @@
 @endif
 <div class="container my-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-10 justify-content-center">
+        <div class="col-12 col-md-12 justify-content-center">
             <form class="form" wire:submit='store'>
                 <div class="flex-column">
                     <label for="title">{{ __('ui.Title') }}:</label>
@@ -58,7 +58,8 @@
                 </div>
                 <div class="mb-3">
                     <input type="file" wire:model.live="temporary_images" multiple
-                        class="form-control shadow @error('temporary_images.* ') is-invalid @enderror" placeholder="Img/">
+                        class="form-control shadow @error('temporary_images.* ') is-invalid @enderror"
+                        placeholder="Img/">
                     @error('temporary_images.* ')
                         <p class="fst-italic text-danger">{{ $message }}</p>
                     @enderror
@@ -69,14 +70,18 @@
                 @if (!empty($images))
                     <div class="row">
                         <div class="col-12">
-                            <p class="">Photo preview: </p>
+                            <p class="preview">{{ __('ui.Photopreview:') }}</p>
                             <div class="row border border-4 rounded shadow py-4">
                                 @foreach ($images as $key => $image)
-                                    <div class="col d-flex flex-column align-items-center my-3">
+                                    <div class="col d-flex flex-column align-items-center my-3 position-relative">
                                         <div class="img-preview mx-auto shadow rounded"
                                             style="background-image: url({{ $image->temporaryUrl() }});">
+                                            <button class="bg-transparent border-0 position-absolute top-0 p-2"
+                                                style="z-index: 10;">
+                                                <i class="bi bi-x-circle-fill fs-4 text-danger"
+                                                    wire:click="removeImage({{ $key }})"></i>
+                                            </button>
                                         </div>
-                                        <button type="button" class="btn mt-1 btn-danger" wire:click="removeImage({{ $key }})">X</button>
                                     </div>
                                 @endforeach
                             </div>

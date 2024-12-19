@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="my-5 text-center auth-spacing">Login</h1>
+                <h1 class="my-5 text-center auth-spacing">{{ __('ui.Login') }}</h1>
             </div>
         </div>
     </div>
@@ -12,7 +12,7 @@
                 <form class="form m-0" action="{{ route('login') }}" method="POST">
                     @csrf
                     <div class="flex-column">
-                        <label for="email">Email </label>
+                        <label for="email">{{ __('ui.Email') }}</label>
                     </div>
                     <div class="inputForm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 32 32" height="20">
@@ -22,11 +22,11 @@
                                 </path>
                             </g>
                         </svg>
-                        <input placeholder="Enter your Email" class="input" type="email" name="email"
+                        <input placeholder="{{ __('ui.EnteryourEmail') }}" class="input" type="email" name="email"
                             id="email">
                     </div>
                     <div class="flex-column">
-                        <label for="password">Password </label>
+                        <label for="password">{{ __('ui.Password') }}</label>
                     </div>
                     <div class="inputForm">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="-64 0 512 512" height="20">
@@ -37,21 +37,21 @@
                                 d="m304 224c-8.832031 0-16-7.167969-16-16v-80c0-52.929688-43.070312-96-96-96s-96 43.070312-96 96v80c0 8.832031-7.167969 16-16 16s-16-7.167969-16-16v-80c0-70.59375 57.40625-128 128-128s128 57.40625 128 128v80c0 8.832031-7.167969 16-16 16zm0 0">
                             </path>
                         </svg>
-                        <input placeholder="Enter your Password" class="input" type="password" name="password"
+                        <input placeholder="{{ __('ui.EnteryourPassword') }}" class="input" type="password" name="password"
                             id="password">
                     </div>
                     <div class="flex-row">
                         <div>
                             <input type="checkbox" id="remember" name="remember">
-                            <label for="remember">Remember me</label>
+                            <label for="remember">{{ __('ui.Rememberme') }}</label>
                         </div>
-                        <span class="span">Forgot password?</span>
+                        <span class="span">{{ __('ui.Forgotpassword?') }}</span>
                     </div>
                     <button class="button-submit rounded-pill reviewer-btn" type="submit">Sign In</button>
-                    <p class="p">Don't have an account? <span class="span">
-                            <a href="{{ route('register') }}">Login</a></span>
+                    <p class="p">{{ __('ui.Don\'thaveanaccount?') }}<span class="span">
+                            <a href="{{ route('register') }}">{{ __('ui.Login') }}</a></span>
                     </p>
-                    <p class="p line">Or With</p>
+                    <p class="p line">{{ __('ui.OrWith') }}</p>
                     <div class="flex-row">
                         <button class="btn google rounded-pill">
                             <a
