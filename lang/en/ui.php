@@ -89,5 +89,6 @@ return
     'Don\'thaveanaccount?'=>'Don\'t have an account?',
     'OrWith'=>'Or With',
     'Typesomething...'=>'Type something...',
-    'Photopreview:'=>'Photo preview:'
+    'Photopreview:'=>'Photo preview:',
+    'BecomeRevisor'=>'Become Revisor',
   ];

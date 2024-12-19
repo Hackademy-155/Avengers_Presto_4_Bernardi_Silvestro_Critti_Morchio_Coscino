@@ -90,4 +90,5 @@ return
     'OrWith'=>'O con',
     'Typesomething...'=>'Scrivi qualcosa',
     'Photo preview:'=>'Anteprima foto:',
+    'BecomeRevisor'=>'Diventa Revisore',
   ];

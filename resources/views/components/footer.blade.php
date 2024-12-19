@@ -61,7 +61,7 @@
                 <h5 class="widget-title text-uppercase mb-4 title-footer">{{ __('ui.Workwithus') }}</h5>
                 <p>{{ __('ui.Doyouwanttobecomeareviewer?') }}</p>
                 <p>{{ __('ui.Byclickingthebuttonbelow,youcanrequesttojoinasareviewer.') }}</p>
-                <a href="{{ route('become.revisor') }}" class="btn rounded-pill reviewer-btn">{{ route('become.revisor') }}<i
+                <a href="{{ route('become.revisor') }}" class="btn rounded-pill reviewer-btn">{{ __('ui.BecomeRevisor') }}<i
                         class="bi bi-envelope-paper-fill"></i></a>
             </div>
         </div>
